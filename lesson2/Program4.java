@@ -11,11 +11,17 @@ public class Program4 {
 
 		switch(dayOfWeek) {
 			case 1:
-				System.out.println("Понедельник");
 			case 2:
-				System.out.println("Вторник");
+			case 3:
+			case 4:
+			case 5:
+				System.out.println("Будни");
+				break;
+			case 6:
+			case 7:
+				System.out.println("Выходной");
 			default:
-				System.out.println("Я не знаю что это за день!");
+				System.out.println("Вы ввели неверное число!");
 		}
 	}
 }
