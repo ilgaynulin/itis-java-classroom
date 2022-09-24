@@ -12,13 +12,10 @@ public class Program4 {
 		switch(dayOfWeek) {
 			case 1:
 				System.out.println("Понедельник");
-				break;
 			case 2:
 				System.out.println("Вторник");
-				break;
 			default:
 				System.out.println("Я не знаю что это за день!");
-				break;
 		}
 	}
 }
