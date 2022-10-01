@@ -4,5 +4,4 @@ public class SpecialSymbols {
 		double double2 = 2.1;
 		System.out.format("%d\t%.3f", number1, double2);
 	}
-
 }
