@@ -10,7 +10,7 @@ public class TemperatureCollector {
 
 		measurements = new double[arrayDimmention];
 
-		System.out.print("Вводите значения температуры!");
+		System.out.println("Вводите значения температуры!");
 
 		for(int i = 0; i < measurements.length; i++) {
 			System.out.print("Введите элемент номер " + i + ":");
@@ -22,5 +22,7 @@ public class TemperatureCollector {
 		for(int i = 0; i < measurements.length; i++) {
 			System.out.println(measurements[i]);
 		}
+
+		
 	}
 }
