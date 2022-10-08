@@ -21,6 +21,7 @@ public class ArrayFunction {
 		System.out.println('\n');
 	}
 
+	// Передача в аргумент по ссылке
 	static void setElementsZero(int[] a) {
 		System.out.println("Зануляем элементы...");
 		for(int i = 0; i < a.length; i++) {
