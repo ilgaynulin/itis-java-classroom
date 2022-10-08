@@ -8,6 +8,7 @@ public class ArrayRef {
 		
 		System.out.println("Присваиваемв b ссылку а ");
 		b = a;
+		// b = cloned(a);
 
 		System.out.println("Массив b:");
 		showArray(b);
