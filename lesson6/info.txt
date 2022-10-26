@@ -16,7 +16,7 @@ if(str.equals(str1)) { // сравнение содержимых строк
 
 boolean equals(String str) // сравнивает содержимое строк
 
-char charAt(String str); // Выводит символ под индексом в строке
+char charAt(int index); // Выводит символ под индексом в строке
 
 substring(int begin); // Срезает и возвращает строку от индекса begin включительно и до конца строки
 
