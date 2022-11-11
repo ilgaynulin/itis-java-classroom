@@ -1,0 +1,33 @@
+Рекурсия
+Это вызов функции внутри функции
+
+Базовый случай
+Рекурсивный шаг
+
+
+int bin(a, el, 0, a.length - 1) {
+	if(begin > end) {
+		return -1;
+	}
+
+	if(begin == end) {
+		if(a[begin] == el) {
+			return begin;
+		} else {
+			return -1;7
+		}
+	}
+
+	// рекурсивня форма
+	int leftResult = bin(a, el, begin, (end + begin) / 2);
+
+	int rightResult = bin(a, el, (end + begin) / 2 + 1, end);
+
+	if(leftResult != -1) {
+		return leftResult;
+	} else if(rightResult != -1) {
+		return rigthResult;
+	} else {
+		return -1;
+	}
+}

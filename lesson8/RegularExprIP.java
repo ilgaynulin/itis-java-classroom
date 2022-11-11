@@ -1,10 +1,11 @@
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class RegularExprEmail {
+public class RegularExprIP {
 	public static void main(String[] args) {
-		String text = "my email @ is ilgayn_ulin@gmail.com   my reserve mail  ilyas@gmail.com ";
-		String regEx = "^[a-zA-Z0-9._%+-]+?@[a-zA-Z0-9.-]+?\\.[a-zA-Z]{2,6}$";
+		String text = "next ips 192.168.1.1 my ip 10.10.154.1  secondIP    1.1.1.1";
+		String regEx = "(\\d{1,3}\\.){3}(\\d{1,3})";
+
 
 		Pattern p = Pattern.compile(regEx);
 		Matcher m = p.matcher(text);

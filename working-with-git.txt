@@ -1,7 +1,8 @@
 Git
 
 Клонирование репозитория
-git clone https://github.com/ilgaynulin/itis-java-classroom   // url - ссылка на репозиторий
+git clone https://github.com/java-itis-course/classroom-hello-world-ilgaynulin
+itis-java-classroom   // url - ссылка на репозиторий
 
 
 Удалённый репозиторий - репозиторий на сайте (в данном случае в github)
