@@ -5,14 +5,23 @@ class Vehicle {
 	int passangers; // 0
 	int maxSpeed; // 0
 	double avgGasPer100Km; // 0.0
+	Date createdDay;
 
-	Vehicle(String model, double gasTankVolume, int passangers, int maxSpeed, double avgGasPer100Km) {
+	RussianVehicle(String model, double gasTankVolume, int passangers, int maxSpeed, double avgGasPer100Km) {
+		// Могут быть валидации входных данных
+		if(passangers < 0) {
+			this.passangers = 0;
+		} else {
+			this.passangers = passangers;
+		}
 		this.model = model;
 		this.gasTankVolume = gasTankVolume;
-		this.passangers = passangers;
 		this.maxSpeed = maxSpeed;
 		this.avgGasPer100Km = avgGasPer100Km;
+		// Можно указывать значения по умолчанию
+		this.createdDay = new Date();
 	}
+
 
 	double avgDistance(double gasVolume) {
 		return gasVolume / avgGasPer100Km * 100;
