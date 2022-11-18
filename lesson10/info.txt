@@ -1,0 +1,40 @@
+Задание 1) Напишите функцию с использованием регулярных выражений, которая принимает строку, и выдаёт все найденные номера автомобиля в виде массива строк. Номера автомобилей, которые соответствуют формату wNNNww, где w – буква, N – цифра.. 
+Пример:
+Аргумент функции: "А012АА  а вот корявый номер A3AA3A теперь нормальный номер Е102СН и такой номер А100АМ"
+Вывод функции: ["А012АА", "Е102СН", "А100АМ"]
+
+Random rand = new Random();
+rand.nextInt()
+
+Random.nextInt()
+
+class Main {
+	public static void main(String[] args) {
+		findAllPlateNumbers()
+	}
+
+	static String[] findAllPlateNumbers(String text) {
+
+	} 
+}
+
+static String[] findAllPlateNumbers(String text) {
+	Pattern plateNumberPattern = Pattern.compile("\\d{3}");
+	Matcher m = plateNumberPattern.matcher(text);
+
+	int counter = 0;
+	while(m.find()) {
+		counter++;
+	}
+
+	String[] result = new String[counter]
+
+	// Сброс указателя внутри матчера
+	m.reset();
+
+	int index = 0;
+	while(m.find()) {
+		result[index] = m.group();
+		index++;
+	}
+}
