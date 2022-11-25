@@ -1,12 +1,55 @@
-Object - класс который является наследником для всех классов в java
+Object - класс который является родителем для всех классов в java
 
+В нём есть ряд методов:
 - boolean equals(Object object) - сравнивает объект из аргумента с самим собой. true - если объекты равны, false - если нет
-
 - String toString() - строковое представление класса
+- Class getClass() - получаем информацию о классе у объекта
+- int hashCode() - возвращает хэшкод объекта. Численное представление объекта
+- clone() - возвращает клон объекта. Копию объекта
 
-- Class getClass() - получаем информацию о классе.
 
-- int hashCode() - возвращает хэшкод объекта
+Метод equals
+Необходимо переопределять для созданных классов. Т.к. его стандартная реализация в классе Object сравнивает только ссылки объекта.
 
-- clone() - возвращает клон объекта.
+Пример:
+class Person {
+	String name;
+	int age;
 
+	@Override
+    	public boolean equals(Object object) {
+        	// this это ссылка на текущий объект, пришёл ли в аргумент объект класса Person?
+        	if(object.getClass() != this.getClass()) {
+            	return false;
+        	}
+		// Далее проверяем по полям, если поля равны, то объекты равны
+        	if(this.age == ((Person)object).age && this.name == ((Person)object).name) {
+            		return true;
+        	} else {
+            		return false;
+        	}
+    	}
+}
+
+Метод toString
+Метод toString необходимо переопределять для новых классов. Т.к. его базовая реализация в классе Object выводит название класса и его хэшкод.
+
+Пример:
+class Person {
+	String name;
+	int age;
+
+	@Override
+    	public String toString() {
+        	return this.name + " " + this.age;
+    	}
+}
+
+Метод toString вызывается, когда java необходимо преобразовать ваш класс в строку:
+
+- Когда мы в строку прибавляем наш класс:
+
+Person person = new Person("Иван", 19);
+String str = "Hello " + person; // В str будет "Hello Иван 19"
+
+- Когда передаём объект в System.out.println(person); // на консоль будет выведено результат метода toString() для объекта person
