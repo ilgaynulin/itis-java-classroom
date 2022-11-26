@@ -1,5 +1,3 @@
-package com.company;
-
 public class Rectangle {
     private int a; // длину
     private int b; // ширина
