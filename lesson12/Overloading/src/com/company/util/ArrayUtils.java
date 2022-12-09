@@ -39,4 +39,12 @@ public class ArrayUtils {
     }
 
     // Реализовать avg для int[] double[]
+
+    public static double avg(int[] array) {
+        return (double) sum(array) / array.length;
+    }
+
+    public static double avg(double[] array) {
+        return sum(array) / array.length;
+    }
 }
