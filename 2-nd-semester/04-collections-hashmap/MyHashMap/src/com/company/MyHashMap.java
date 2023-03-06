@@ -16,24 +16,17 @@ public class MyHashMap<K, V> {
         if(bucketNode == null) {
             buckets[bucketIndex] = new Node<>(newEntry, null);
         } else {
-            while(bucketNode != null) {
+            while (bucketNode != null) {
                 Entry<K, V> currentEntry = bucketNode.getValue();
                 if(currentEntry.getKey().equals(key)) {
                     currentEntry.setValue(value);
                     break;
-                } else {
-                    if(bucketNode.getNext() == null) {
-                        bucketNode.setNext(new Node<>(newEntry, null));
-                        break;
-                    }
-                    bucketNode = bucketNode.getNext();
                 }
-
+                if(bucketNode.getNext() == null) {
+                    bucketNode.setNext(new Node<>(newEntry, null));
+                }
+                bucketNode = bucketNode.getNext();
             }
-
-
-
-
         }
     }
 }
