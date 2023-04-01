@@ -2,14 +2,17 @@ package com.company;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
-public class MainReaderWriter {
+public class MainClassworkWriter {
     public static void main(String[] args) {
+        Random rand = new Random();
         FileWriter fw = null;
         try {
-            fw = new FileWriter("writeWithWriter.txt");
-            String str = "Я записываю в файл";
-            fw.write(str);
+            fw = new FileWriter("writeOneHundredRandomNumbers.txt", );
+            for(int i = 0; i < 50; i++) {
+                fw.write(rand.nextInt(100) + "\n");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -20,8 +23,7 @@ public class MainReaderWriter {
                     e.printStackTrace();
                 }
             }
+
         }
     }
-
-
 }
