@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class FileMain {
     public static void main(String[] args) {
-        File file = new File("C:\\Users\\i.gainulin\\Desktop\\desktop\\repos\\itis-java-classroom\\2-nd-semester\\09 java io\\BufferedReaderWriter\\files");
+        File file = new File(System.getProperty("user.dir") + "\\files");
         if(file.exists()) {
             System.out.println("Файл/Директория существует");
             if(file.isDirectory()) {
