@@ -11,7 +11,8 @@ public class BonusCardIncrementThread extends Thread {
     public void run() {
         // Инициализация, вычисления сколько именно добавить бонусов
         synchronized (bonusCard) {
-            // Держите в syncronized только тот код, который относиться к общему ресурсу (bonuscard)
+            // Держите в syncronized только тот код, который относиться к общему ресурсу (bonuscard). Прочие операции,
+            // которые не требует данных от bonuscard, лучше вынести за блок synchronized
             // Избегайте длительных операций
             Integer balance = bonusCard.getBalance();
             try {
