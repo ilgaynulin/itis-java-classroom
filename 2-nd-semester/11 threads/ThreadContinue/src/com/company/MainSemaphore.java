@@ -9,5 +9,8 @@ public class MainSemaphore {
         for(int i = 0; i < philosophers.length; i++) {
             philosophers[i] = new Philosopher(sem, Integer.toString(i));
         }
+        for(Thread t : philosophers) {
+            t.start();
+        }
     }
 }

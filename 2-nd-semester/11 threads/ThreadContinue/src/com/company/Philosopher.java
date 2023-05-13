@@ -20,7 +20,7 @@ public class Philosopher extends Thread {
                 System.out.println("Философ " + name + " садится за стол");
                 Thread.sleep(3000);
                 full = true;
-                System.out.println("Философ " + name + " освобождает стол")
+                System.out.println("Философ " + name + " освобождает стол");
                 sem.release();
             } catch (InterruptedException e) {
                 System.out.println("Что-то пошло не так");
