@@ -17,6 +17,5 @@ public class HelloWorldThread extends Thread {
         if(throwException) {
             throw new NullPointerException();
         }
-
     }
 }
