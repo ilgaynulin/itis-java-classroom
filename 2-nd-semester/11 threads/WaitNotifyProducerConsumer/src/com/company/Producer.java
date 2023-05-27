@@ -9,15 +9,13 @@ public class Producer extends Thread {
 
     @Override
     public void run() {
-        for(int i = 0; i < 6; i++) {
-            while(store.canAcceptGood()) {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                store.fill();
+        while(true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+            store.fill();
         }
     }
 }

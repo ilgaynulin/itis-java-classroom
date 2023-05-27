@@ -63,7 +63,6 @@ public class MyArrayList<T> {
             objects[i] = objects[i+1];
         }
         objects[size - 1] = null;
-        size--;
     }
 
     private void increaseArrayCapacity() {

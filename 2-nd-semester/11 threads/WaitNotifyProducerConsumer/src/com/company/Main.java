@@ -6,8 +6,8 @@ public class Main {
         Store store = new Store();
         Thread producer = new Producer(store);
         Thread consumer = new Consumer(store);
-
-        producer.start();
         consumer.start();
+        producer.start();
+
     }
 }

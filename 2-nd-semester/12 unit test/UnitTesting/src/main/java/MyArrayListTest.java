@@ -37,4 +37,16 @@ public class MyArrayListTest {
 
         Assert.assertEquals(expectedSize, actualSize);
     }
+
+    @Test
+    public void test_whenPutFirst_thenAddedElementInZeroIndex() {
+        strings.putFirst("Hello");
+        Assert.assertEquals("Hello", strings.get(0));
+    }
+
+    @Test
+    public void test_whenPutFirst_thenSizeIncremented() {
+        strings.putFirst("Hello");
+        Assert.assertEquals(1, strings.getSize());
+    }
 }

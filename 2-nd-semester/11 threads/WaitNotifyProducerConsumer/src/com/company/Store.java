@@ -21,32 +21,33 @@ public class Store {
     }
 
     public synchronized void fill() {
-        System.out.println("Магазин пополнился товаром");
-        numberOfGoods++;
         if(isStoreFull()) {
-            System.out.println("Магазин заполнился товаром");
+            System.out.println("Магазин переполнен");
             try {
                 notify();
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
+        } else {
+            System.out.println("Магазин пополнился товаром");
+            numberOfGoods++;
         }
     }
 
     public synchronized void sell() {
         try {
-            Thread.sleep(2000);
-            numberOfGoods--;
             if(!canSellGood()) {
                 System.out.println("Магазин пустой");
+                notify();
                 wait();
-
+            } else {
+                Thread.sleep(1000);
+                numberOfGoods--;
+                System.out.println("Покупатель купил товар");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        notify();
     }
 }

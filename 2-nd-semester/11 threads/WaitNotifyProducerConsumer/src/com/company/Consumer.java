@@ -9,15 +9,13 @@ public class Consumer extends Thread {
 
     @Override
     public void run() {
-        while(store.canSellGood()) {
-            for(int i = 0; i < 6; i++) {
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                store.sell();
+        while(true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+            store.sell();
         }
     }
 }
